@@ -14,6 +14,7 @@ RUN addgroup -S app && adduser -S -G app -h /home/app app \
 
 COPY --chown=app:app index.html /usr/share/nginx/html/index.html
 COPY --chown=app:app nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --chown=app:app nginx/nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 6232
 

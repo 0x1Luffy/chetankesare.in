@@ -5,8 +5,8 @@ This site is a static HTML portfolio and is served by Nginx in a lightweight con
 ## Build and run locally
 
 ```bash
-docker build -t chetankesare/portfolio:latest .
-docker run --rm -p 6232:6232 chetankesare/portfolio:latest
+docker buildx build --platform linux/arm64 -t 0x1luffy/portfolio:latest --load .
+docker run --rm -p 6232:6232 0x1luffy/portfolio:latest
 ```
 
 Or with Docker Compose:
@@ -23,18 +23,17 @@ docker compose up -d --build
 docker login
 ```
 
-2. Tag and push your image:
+2. Build and push your ARM64 image:
 
 ```bash
-docker tag chetankesare/portfolio:latest chetankesare/portfolio:latest
-docker push chetankesare/portfolio:latest
+docker buildx build --platform linux/arm64 -t 0x1luffy/portfolio:latest --push .
 ```
 
 3. On your VM, pull and run the image from Docker Hub:
 
 ```bash
-docker pull chetankesare/portfolio:latest
-docker run -d --name chetankesare-portfolio -p 6232:6232 chetankesare/portfolio:latest
+docker pull 0x1luffy/portfolio:latest
+docker run -d --name chetankesare-portfolio -p 6232:6232 0x1luffy/portfolio:latest
 ```
 
 ## Oracle VM deployment
