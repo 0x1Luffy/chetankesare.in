@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chetan Kesare — DevOps Engineer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23b5552f'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='17' fill='white' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:#f7f1e7;color:#2a2620;font-family:'Hanken Grotesk',system-ui,sans-serif;min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:#e8b48f;color:#2a2620}
+  a{color:inherit}
+  :root{--accent:#b5552f}
+  .pf-nav-toggle{display:none;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid #d9cdb8;border-radius:10px;background:rgba(247,241,231,0.6);color:#2a2620;cursor:pointer;padding:0}
+  .pf-nav-toggle span,.pf-nav-toggle span::before,.pf-nav-toggle span::after{content:'';display:block;width:18px;height:2px;background:#2a2620;border-radius:2px;transition:transform .2s,opacity .2s}
+  .pf-nav-toggle span{position:relative}
+  .pf-nav-toggle span::before{position:absolute;top:-6px}
+  .pf-nav-toggle span::after{position:absolute;top:6px}
+  .pf-nav-toggle.open span{background:transparent}
+  .pf-nav-toggle.open span::before{transform:translateY(6px) rotate(45deg)}
+  .pf-nav-toggle.open span::after{transform:translateY(-6px) rotate(-45deg)}
+  @media (max-width:960px){
+    .pf-nav-toggle{display:flex}
+    .pf-nav-links{display:none!important;position:absolute;top:calc(100% + 8px);right:16px;left:16px;flex-direction:column;align-items:stretch!important;gap:6px!important;background:#f7f1e7;border:1px solid #e7ddcc;border-radius:14px;padding:14px;box-shadow:0 12px 30px rgba(42,38,32,0.14)}
+    .pf-nav-links.open{display:flex!important}
+    .pf-nav-links .nav-link{padding:10px 10px!important;border-bottom:none!important;border-radius:8px}
+    .pf-nav-links a[href='#contact']{text-align:center;margin-top:4px}
+  }
+  @media (max-width:760px){
+    .pf-hero-h1{font-size:44px!important}
+    .pf-grid2{grid-template-columns:1fr!important}
+    .pf-hero{grid-template-columns:1fr!important;gap:40px!important}
+    .pf-avatar{order:-1;justify-self:center;width:220px}
+    .pf-sec-head{flex-direction:column;align-items:flex-start!important;gap:4px}
+    .pf-sec-head h2{font-size:34px!important}
+  }
+  @keyframes pf-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  @keyframes pf-blink{0%,45%{opacity:1}55%,100%{opacity:0}}
+  @keyframes pf-scan{0%,100%{top:44px;opacity:0}20%,80%{opacity:1}50%{top:calc(100% - 40px)}}
+  @keyframes pf-cell{0%,100%{opacity:.18}50%{opacity:1}}
+  .pf-panel{position:relative;background:#2a2620;border-radius:14px;padding:20px 22px 24px;box-shadow:0 18px 40px -18px rgba(42,38,32,0.55),inset 0 1px 0 rgba(255,255,255,0.05);overflow:hidden;animation:pf-float 6s ease-in-out infinite}
+  .pf-scan::before{content:"";position:absolute;left:14px;right:14px;top:44px;height:26px;border-radius:6px;background:rgba(181,85,47,0.14);animation:pf-scan 5.5s ease-in-out infinite;pointer-events:none}
+  .pf-dots-row{display:flex;gap:7px;margin-bottom:18px}
+  .pf-dots-row span{width:11px;height:11px;border-radius:50%}
+  .pf-code{position:relative;font-family:'Spline Sans Mono',monospace;font-size:13px;line-height:1.9;color:#e8ddc9;white-space:pre;z-index:1}
+  .pf-cur{display:inline-block;width:8px;height:15px;background:#e8b48f;vertical-align:-2px;margin-left:2px;animation:pf-blink 1.05s step-end infinite}
+  .tk-k{color:#e8b48f}.tk-s{color:#9fbf8f}.tk-n{color:#d9a06b}.tk-p{color:#8a8170}.tk-c{color:#6f6857}.tk-ok{color:#8fb573}.tk-err{color:#d97b6c}
+  .pf-grid-cells{display:grid;grid-template-columns:repeat(12,1fr);gap:5px;position:relative;z-index:1}
+  .pf-cell{aspect-ratio:1;border-radius:3px;background:#5f8f4c;animation:pf-cell 3s ease-in-out infinite}
+  @keyframes pf-spin{to{transform:rotate(360deg)}}
+  @keyframes pf-pulse{0%,100%{transform:scale(1);opacity:.45}50%{transform:scale(1.06);opacity:.8}}
+  .pf-avatar-glow{position:absolute;inset:-12px;border-radius:50%;background:radial-gradient(circle,rgba(232,180,143,0.5),transparent 70%);animation:pf-pulse 5s ease-in-out infinite;pointer-events:none}
+  .pf-avatar-ring{position:absolute;inset:-24px;border-radius:50%;border:2px dashed rgba(181,85,47,0.45);animation:pf-spin 26s linear infinite;pointer-events:none}
+  .pf-orbit{position:absolute;inset:-24px;animation:pf-spin 14s linear infinite;pointer-events:none}
+  .pf-orbit span{position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(181,85,47,0.15)}
+  .pf-initial-avatar{position:relative;width:240px;height:240px;border-radius:50%;border:6px solid #f7f1e7;box-shadow:0 8px 30px rgba(42,38,32,0.12);background:linear-gradient(155deg,#2a2620,#4a4038);display:flex;align-items:center;justify-content:center}
+  .pf-initial-avatar span{font-family:'Newsreader',serif;font-size:84px;font-weight:500;color:#e8b48f}
+  .pf-flow{position:relative;background:#2a2620;border-radius:14px;padding:24px;overflow:hidden;box-shadow:0 18px 40px -18px rgba(42,38,32,0.55)}
+  .pf-flow-step{display:flex;align-items:center;gap:12px;font-family:'Spline Sans Mono',monospace;font-size:12.5px;color:#e8ddc9;padding:9px 0}
+  .pf-flow-step .n{flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(232,180,143,0.15);border:1px solid rgba(232,180,143,0.4);color:#e8b48f;display:flex;align-items:center;justify-content:center;font-size:11px}
+  .pf-flow-line{width:1px;height:14px;background:rgba(232,180,143,0.3);margin-left:11px}
+  .pf-badge-progress{display:inline-flex;align-items:center;gap:6px;font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#8a6a4a;background:#f3e6d5;border:1px solid #e3c9a3;padding:4px 10px;border-radius:999px}
+  .pf-badge-progress::before{content:'';width:6px;height:6px;border-radius:50%;background:#c88a3e}
+  @media (prefers-reduced-motion:reduce){
+    .pf-panel,.pf-scan::before,.pf-cur,.pf-cell,.pf-avatar-glow,.pf-avatar-ring,.pf-orbit{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<header style="position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(247,241,231,0.82);border-bottom:1px solid #e7ddcc">
+  <nav style="position:relative;max-width:1080px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between">
+    <a href="#top" style="text-decoration:none;display:flex;align-items:center;gap:10px;font-weight:600;font-size:16px;letter-spacing:-0.01em">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--accent);color:#fff;font-family:'Spline Sans Mono',monospace;font-size:14px;font-weight:500">C</span>
+      Chetan Kesare
+    </a>
+    <button class="pf-nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    <div class="pf-nav-links" id="navLinks" style="display:flex;align-items:center;gap:28px">
+      <a href="#about"          class="nav-link" data-section="about"          style="text-decoration:none;font-size:14px;font-weight:500;color:#7a715f;border-bottom:1.5px solid transparent;padding-bottom:3px;transition:color .15s,border-color .15s">About</a>
+      <a href="#experience"     class="nav-link" data-section="experience"     style="text-decoration:none;font-size:14px;font-weight:500;color:#7a715f;border-bottom:1.5px solid transparent;padding-bottom:3px;transition:color .15s,border-color .15s">Experience</a>
+      <a href="#projects"       class="nav-link" data-section="projects"       style="text-decoration:none;font-size:14px;font-weight:500;color:#7a715f;border-bottom:1.5px solid transparent;padding-bottom:3px;transition:color .15s,border-color .15s">Projects</a>
+      <a href="#ai"             class="nav-link" data-section="ai"             style="text-decoration:none;font-size:14px;font-weight:500;color:#7a715f;border-bottom:1.5px solid transparent;padding-bottom:3px;transition:color .15s,border-color .15s">AI</a>
+      <a href="#certifications" class="nav-link" data-section="certifications" style="text-decoration:none;font-size:14px;font-weight:500;color:#7a715f;border-bottom:1.5px solid transparent;padding-bottom:3px;transition:color .15s,border-color .15s">Certifications</a>
+      <a href="#skills"         class="nav-link" data-section="skills"         style="text-decoration:none;font-size:14px;font-weight:500;color:#7a715f;border-bottom:1.5px solid transparent;padding-bottom:3px;transition:color .15s,border-color .15s">Skills</a>
+      <a href="#education"      class="nav-link" data-section="education"      style="text-decoration:none;font-size:14px;font-weight:500;color:#7a715f;border-bottom:1.5px solid transparent;padding-bottom:3px;transition:color .15s,border-color .15s">Education</a>
+      <a href="#contact" style="text-decoration:none;font-size:14px;font-weight:600;color:#fff;background:#2a2620;padding:8px 16px;border-radius:999px">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main style="max-width:1080px;margin:0 auto;padding:0 32px" id="top">
+
+  <!-- HERO / ABOUT -->
+  <section id="about" class="pf-hero" style="padding:96px 0 80px;display:grid;grid-template-columns:1fr auto;gap:64px;align-items:center">
+    <div>
+      <p style="font-family:'Spline Sans Mono',monospace;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);margin-bottom:22px">DevOps Engineer</p>
+      <h1 class="pf-hero-h1" style="font-family:'Newsreader',serif;font-weight:500;font-size:60px;line-height:1.08;letter-spacing:-0.02em;max-width:17ch;margin-bottom:26px">Building infrastructure that heals itself.</h1>
+      <p style="font-size:18px;max-width:56ch;color:#544d42;margin-bottom:36px">I'm Chetan Kesare, a <b>DevOps Engineer</b> with <b style="color:#e0684a;">1.3+ years</b> of experience who builds and operates cloud infrastructure end-to-end — from <b>CI/CD pipeline design</b> and <b>container orchestration</b> with Kubernetes and Helm, to <b>Infrastructure as Code</b> with Terraform and Ansible, to the <b>observability and logging</b> pipelines that keep production reliable. I'm comfortable across <b>AWS and Oracle Cloud</b>, and I care about high-availability, zero-downtime releases, fast incident response, and cutting MTTR — the kind of systems that stay up and stay boring.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <a href="#projects" style="text-decoration:none;font-size:15px;font-weight:600;color:#fff;background:var(--accent);padding:12px 22px;border-radius:999px">View my work</a>
+        <a href="https://linkedin.com/in/chetan-kesare09" target="_blank" rel="noopener" style="text-decoration:none;font-size:15px;font-weight:500;color:#2a2620;padding:12px 18px;border:1px solid #d9cdb8;border-radius:999px">LinkedIn</a>
+        <a href="https://github.com/0x1Luffy" target="_blank" rel="noopener" style="text-decoration:none;font-size:15px;font-weight:500;color:#2a2620;padding:12px 18px;border:1px solid #d9cdb8;border-radius:999px">GitHub</a>
+      </div>
+    </div>
+    <div class="pf-avatar" style="position:relative;flex-shrink:0">
+      <div class="pf-avatar-glow"></div>
+      <div style="position:absolute;inset:-14px;border-radius:50%;background-image:repeating-linear-gradient(135deg,#efe5d3 0 12px,#ead9bf 12px 24px);opacity:0.6"></div>
+      <div class="pf-avatar-ring"></div>
+      <div class="pf-orbit"><span></span></div>
+      <div class="pf-initial-avatar"><span>CK</span></div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" style="padding:72px 0;border-top:1px solid #e7ddcc">
+    <div class="pf-grid2" style="display:grid;grid-template-columns:0.55fr 1fr;gap:56px">
+      <div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:40px;letter-spacing:-0.02em;margin-bottom:10px">Experience</h2>
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170">Resume</p>
+        <a href="https://drive.google.com/file/d/1QY4eNxMa569gjqaZ8gmGRqcspUBqJJF-/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:22px;font-size:14px;font-weight:600;color:#2a2620;border:1px solid #d9cdb8;padding:9px 16px;border-radius:999px;text-decoration:none">Download résumé (PDF)</a>
+        <div class="pf-panel pf-scan" aria-hidden="true" style="margin-top:28px;animation-delay:-2s">
+          <div class="pf-dots-row"><span style="background:#e0684a"></span><span style="background:#e0a94a"></span><span style="background:#7aa86b"></span></div>
+<div class="pf-code"><span class="tk-c">$ ./deploy --helm oke</span>
+<span class="tk-ok">✓</span> image build    <span class="tk-p">arm64/amd64</span>
+<span class="tk-ok">✓</span> helm upgrade   <span class="tk-p">rolled out</span>
+<span class="tk-ok">✓</span> ecs service    <span class="tk-p">stable</span>
+<span class="tk-k">→</span> mttr <span class="tk-n">↓</span> incident resolved<span class="pf-cur"></span></div>
+        </div>
+      </div>
+      <div>
+        <div style="padding:22px 0;border-top:1px solid #ece3d2;display:grid;grid-template-columns:auto 1fr;gap:28px">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#8a8170;white-space:nowrap;padding-top:4px">Aug 2025 — Now</div>
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:2px">System Engineer — DevOps</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500;margin-bottom:2px">CloudDrove Inc.</p>
+            <p style="font-size:14px;color:#7a715f;margin-bottom:10px">Project: inPowered.ai (Ad-Tech Platform) · Toronto, Canada (Remote)</p>
+            <ul style="font-size:15px;color:#544d42;padding-left:18px;display:flex;flex-direction:column;gap:6px">
+              <li>Provisioned and maintained AWS ECS services end-to-end — from architecting new services for feature rollouts to fixing existing services and Load Balancer (ALB) configurations — ensuring stable, production-ready deployments.</li>
+              <li>Managed AWS IAM security posture: created and maintained IAM roles and permission policies for services and users, enforcing least-privilege access and resolving permission-related incidents across the environment.</li>
+              <li>Drove AWS cost optimization initiatives, identifying and eliminating inefficient resource usage across compute and storage to reduce cloud spend.</li>
+              <li>Performed routine server patching and maintenance on EC2, RDS, and ElastiCache instances, keeping infrastructure secure, up to date, and audit-ready.</li>
+              <li>Administered a Kubernetes cluster on Oracle Cloud Infrastructure (OCI) hosting MLOps workloads — triaging pod failures, debugging cluster-level issues, and maintaining service health and uptime.</li>
+              <li>Managed Redis caching infrastructure on Oracle Cloud VMs, ensuring 24/7 availability through proactive monitoring and rapid resolution of caching failures and downtime.</li>
+              <li>Acted as the DevOps point of contact for client-facing engineering support, assisting with real-time application fixes, improvements, and deployment issues to keep client releases on track.</li>
+              <li>Built and maintained Jenkins CI/CD pipelines for a <b>30+ microservice</b> platform, containerizing services with Docker and managing image builds and pushes to Amazon ECR, with Helm-based deployments to AWS ECS/EKS and Oracle OKE enabling zero-downtime releases across DEV, QA, STAGING, and PROD.</li>
+            </ul>
+          </div>
+        </div>
+        <div style="padding:22px 0;border-top:1px solid #ece3d2;display:grid;grid-template-columns:auto 1fr;gap:28px">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#8a8170;white-space:nowrap;padding-top:4px">Oct — Dec 2024</div>
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:2px">Software Development Intern</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500;margin-bottom:2px">Bluestock Fintech</p>
+            <p style="font-size:14px;color:#7a715f;margin-bottom:10px">Pune, India (Remote)</p>
+            <ul style="font-size:15px;color:#544d42;padding-left:18px;display:flex;flex-direction:column;gap:6px">
+              <li>Developed and deployed UI features for a real-time, data-intensive stock-market platform, ensuring performance, accuracy, and stability under concurrent user load.</li>
+              <li>Resolved production bugs and improved interface responsiveness, reducing the frontend error rate.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" style="padding:72px 0;border-top:1px solid #e7ddcc">
+    <div class="pf-sec-head" style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:40px;letter-spacing:-0.02em">Projects</h2>
+      <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170">Case study</p>
+    </div>
+
+    <article class="pf-grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;padding:36px 0;border-top:1px solid #ece3d2">
+      <div>
+        <div class="pf-flow" aria-hidden="true">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8170;margin-bottom:16px">push-to-deploy flow</div>
+          <div class="pf-flow-step"><span class="n">1</span>GitHub push → Jenkins webhook</div>
+          <div class="pf-flow-line"></div>
+          <div class="pf-flow-step"><span class="n">2</span>Diff cluster state (kubectl annotation)</div>
+          <div class="pf-flow-line"></div>
+          <div class="pf-flow-step"><span class="n">3</span>Build only changed services (Buildx, arm64)</div>
+          <div class="pf-flow-line"></div>
+          <div class="pf-flow-step"><span class="n">4</span>Push image → Docker Hub</div>
+          <div class="pf-flow-line"></div>
+          <div class="pf-flow-step"><span class="n">5</span>Rollout to K3s, health-checked</div>
+          <div class="pf-flow-line"></div>
+          <div class="pf-flow-step"><span class="n">6</span><span class="tk-ok" style="color:#8fb573">✓</span>&nbsp;Annotate cluster: deploy verified</div>
+        </div>
+      </div>
+      <div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Jenkins</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Groovy</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Docker &amp; Buildx</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Kubernetes (K3s)</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Docker Hub</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">GitHub Webhooks</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Oracle Cloud (ARM)</span>
+        </div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:27px;letter-spacing:-0.01em;margin-bottom:10px">Automated CI/CD Pipeline for a Multi-Microservice Kubernetes Deployment</h3>
+        <p style="font-size:15px;color:#544d42;margin-bottom:14px">Built an end-to-end Jenkins CI/CD pipeline for a 6-service MERN-stack application (backend, frontend, auth-service, notification-service, stats-service, status-service) running on a self-hosted K3s cluster — turning a previously manual deployment into a fully automated push-to-deploy workflow.</p>
+        <p style="font-size:15px;color:#544d42;margin-bottom:14px"><b>What it does:</b> a push to GitHub triggers Jenkins via webhook, which determines which services actually changed, builds and pushes only those as Docker images (native ARM64 builds via Buildx, hosted on Docker Hub), and rolls them out to the live cluster with health-checked deployments — without rebuilding or restarting unrelated services.</p>
+        <p style="font-size:15px;color:#544d42;margin-bottom:16px"><b>The interesting engineering problem:</b> the hard part wasn't the happy path — it was reliably knowing what needed rebuilding. Diffing git history broke the moment a build failed partway through, since Jenkins' own "last successful build" bookkeeping doesn't distinguish between "actually deployed" and "reported success while silently missing a step." The pipeline was redesigned to read its own deployment state directly off the Kubernetes cluster, via a custom annotation written only after a verified successful rollout, rather than trusting its own history — making the system self-healing against partial failures, closer to how GitOps tools like ArgoCD reason about state. Along the way: Jenkins' Groovy sandbox restrictions, Docker-socket permission boundaries between host and containerized CI runners, and a corrupted-binary/wrong-architecture issue in the build toolchain, each traced to its root cause rather than papered over.</p>
+        <a href="https://github.com/0x1Luffy/DevOps-Culture" target="_blank" rel="noopener" style="display:inline-block;font-size:14px;font-weight:600;color:#fff;background:var(--accent);padding:9px 18px;border-radius:999px;text-decoration:none">View on GitHub ↗</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- AI -->
+  <section id="ai" style="padding:72px 0;border-top:1px solid #e7ddcc">
+    <div class="pf-ai-card" style="background:#2a2620;color:#f3ead9;border-radius:22px;padding:56px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 85% 15%,rgba(181,85,47,0.35),transparent 45%);pointer-events:none"></div>
+      <div style="position:relative">
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#e8b48f;margin-bottom:18px">AI in my work</p>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:38px;letter-spacing:-0.02em;max-width:24ch;margin-bottom:16px">AutoPilot — an autonomous Kubernetes self-healing platform</h2>
+        <p style="font-size:16px;color:#cbbfa9;max-width:66ch;margin-bottom:28px">A personal project exploring what happens when you give a cluster the ability to notice its own problems and fix them before a human has to page in.</p>
+
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px">
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#e8ddc9;border:1px solid rgba(232,180,143,0.3);padding:3px 9px;border-radius:999px">Python</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#e8ddc9;border:1px solid rgba(232,180,143,0.3);padding:3px 9px;border-radius:999px">Kubernetes</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#e8ddc9;border:1px solid rgba(232,180,143,0.3);padding:3px 9px;border-radius:999px">Claude AI</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#e8ddc9;border:1px solid rgba(232,180,143,0.3);padding:3px 9px;border-radius:999px">Jenkins</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#e8ddc9;border:1px solid rgba(232,180,143,0.3);padding:3px 9px;border-radius:999px">Prometheus</span>
+        </div>
+
+        <div class="pf-grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(232,180,143,0.18);border-radius:14px;padding:22px">
+            <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#e8b48f;margin-bottom:10px">SELF-HEALING DETECTION &amp; REMEDIATION</div>
+            <p style="font-size:15px;color:#f3ead9;line-height:1.55">Built an autonomous, AI-powered Kubernetes self-healing platform using the Kubernetes Python SDK, monitoring a containerized MERN microservices app (TaskFlow) on a self-hosted K3s cluster — auto-detecting <b>28+ failure types</b> (CrashLoopBackOff, OOMKill, node pressure, ingress failures) and executing remediations, with Slack-gated approval for high-severity incidents.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(232,180,143,0.18);border-radius:14px;padding:22px">
+            <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#e8b48f;margin-bottom:10px">PIPELINE FAILURE INTELLIGENCE</div>
+            <p style="font-size:15px;color:#f3ead9;line-height:1.55">Engineered Jenkins CI/CD failure intelligence that classifies <b>24 pipeline failure patterns</b> with auto-retry, pre-deploy health gates, and post-deploy verification via webhooks — plus a self-healing feedback loop with config drift detection and Prometheus metrics exposure.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(232,180,143,0.18);border-radius:14px;padding:22px;grid-column:1 / -1">
+            <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#e8b48f;margin-bottom:10px">DEPLOYMENT &amp; INFRASTRUCTURE</div>
+            <p style="font-size:15px;color:#f3ead9;line-height:1.55">Containerized and deployed the TaskFlow MERN application on an Oracle Cloud ARM64 K3s cluster, resolving NGINX reverse-proxy routing and multi-arch Docker build issues to achieve stable external production access.</p>
+          </div>
+        </div>
+
+        <a href="https://github.com/0x1Luffy/Ai-DevOps-Agent" target="_blank" rel="noopener" style="display:inline-block;margin-top:28px;font-size:14px;font-weight:600;color:#2a2620;background:#e8b48f;padding:10px 20px;border-radius:999px;text-decoration:none">View on GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" style="padding:72px 0;border-top:1px solid #e7ddcc">
+    <div class="pf-sec-head" style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:40px;letter-spacing:-0.02em">Certifications</h2>
+      <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170">Learning</p>
+    </div>
+    <div class="pf-grid2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:3px">AWS Certified Cloud Practitioner</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500">Amazon Web Services</p>
+          </div>
+        </div>
+        <span class="pf-badge-progress" style="width:fit-content">In progress</span>
+      </div>
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:3px">Certified Kubernetes Administrator (CKA)</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500">CNCF / The Linux Foundation</p>
+          </div>
+        </div>
+        <span class="pf-badge-progress" style="width:fit-content">Planned</span>
+      </div>
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:3px">HashiCorp Certified: Terraform Associate</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500">HashiCorp</p>
+          </div>
+        </div>
+        <span class="pf-badge-progress" style="width:fit-content">Planned</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" style="padding:72px 0;border-top:1px solid #e7ddcc">
+    <div class="pf-sec-head" style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:40px">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:40px;letter-spacing:-0.02em">Skills &amp; tools</h2>
+      <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170">Skills</p>
+    </div>
+    <div class="pf-grid2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px">
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:22px">
+        <h3 style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#8a8170;margin-bottom:14px">Cloud Platforms</h3>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:15px;color:#3a352d;font-weight:500">AWS (EC2, ECS, EKS, ECR, RDS)</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">AWS (VPC, IAM, ALB/ELB, Route 53)</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Auto Scaling Groups, CloudWatch</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Oracle Cloud Infrastructure (OKE)</span>
+        </div>
+      </div>
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:22px">
+        <h3 style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#8a8170;margin-bottom:14px">Containers &amp; Orchestration</h3>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Docker</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Kubernetes &amp; Helm</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">kubectl / K3s</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Microservices, Pod Lifecycle</span>
+        </div>
+      </div>
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:22px">
+        <h3 style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#8a8170;margin-bottom:14px">CI/CD, IaC &amp; Automation</h3>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Jenkins, GitHub Actions</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Terraform, Ansible</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Bash / Shell Scripting</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">SonarQube, Nexus, Trivy</span>
+        </div>
+      </div>
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:22px">
+        <h3 style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#8a8170;margin-bottom:14px">Observability &amp; Monitoring</h3>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Prometheus, CloudWatch</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">New Relic, Splunk</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Fluent Bit</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Incident Response, MTTR Reduction</span>
+        </div>
+      </div>
+      <div style="background:#fbf7ef;border:1px solid #ece3d2;border-radius:14px;padding:22px">
+        <h3 style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:#8a8170;margin-bottom:14px">Platforms &amp; Practices</h3>
+        <div style="display:flex;flex-direction:column;gap:9px">
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Linux, NGINX</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Load Balancing, High Availability</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Site Reliability Engineering (SRE)</span>
+          <span style="font-size:15px;color:#3a352d;font-weight:500">Disaster Recovery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" style="padding:72px 0;border-top:1px solid #e7ddcc">
+    <div class="pf-grid2" style="display:grid;grid-template-columns:0.55fr 1fr;gap:56px">
+      <div>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:40px;letter-spacing:-0.02em;margin-bottom:10px">Education</h2>
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170">Education</p>
+        <div class="pf-panel" aria-hidden="true" style="margin-top:26px;animation-delay:-3.5s">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#8a8170;margin-bottom:14px">// always learning</div>
+          <div class="pf-grid-cells" id="pf-contrib"></div>
+        </div>
+      </div>
+      <div>
+        <div style="padding:22px 0;border-top:1px solid #ece3d2;display:grid;grid-template-columns:110px 1fr;gap:28px">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#8a8170;white-space:nowrap;padding-top:4px">2021 — 2024</div>
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:2px">B.E. Computer Engineering</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500;margin-bottom:6px">Terna Engineering College, Navi Mumbai, India</p>
+            <p style="font-size:13px;color:#4a7a3a;font-weight:600;font-family:'Spline Sans Mono',monospace">CGPA: 8.23 / 10</p>
+          </div>
+        </div>
+        <div style="padding:22px 0;border-top:1px solid #ece3d2;display:grid;grid-template-columns:110px 1fr;gap:28px">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#8a8170;white-space:nowrap;padding-top:4px">2018 — 2021</div>
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:2px">Diploma in Computer Engineering</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500;margin-bottom:6px">Nanasaheb Mahadik Polytechnic Institute, Sangli, India</p>
+            <p style="font-size:13px;color:#4a7a3a;font-weight:600;font-family:'Spline Sans Mono',monospace">Score: 92% — Top 5% of batch</p>
+          </div>
+        </div>
+        <div style="padding:22px 0;border-top:1px solid #ece3d2;display:grid;grid-template-columns:110px 1fr;gap:28px">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#8a8170;white-space:nowrap;padding-top:4px">2018</div>
+          <div>
+            <h3 style="font-size:18px;font-weight:600;margin-bottom:2px">CBSE</h3>
+            <p style="font-size:14px;color:var(--accent);font-weight:500;margin-bottom:12px">Prakash Public School, Islampur, Maharashtra</p>
+            <p style="font-size:13px;color:#4a7a3a;font-weight:600;font-family:'Spline Sans Mono',monospace">Score: 70% </p>
+            <p style="font-size:15px;color:#544d42">Balanced academics and athletics by winning two District and two Taluka football championships, competing at the Division level, and receiving recognition in the Hindi Olympiad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding:80px 0 40px;border-top:1px solid #e7ddcc">
+    <div class="pf-grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end">
+      <div>
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170;margin-bottom:16px">Contact</p>
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:48px;letter-spacing:-0.02em;line-height:1.05;margin-bottom:18px">Let's build reliable systems together.</h2>
+        <p style="font-size:17px;color:#544d42;max-width:42ch">Open to DevOps / SRE / Cloud Infrastructure roles where I can automate deployments, harden observability, and keep production reliable at scale.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:2px">
+        <a href="mailto:chetankesare06@gmail.com" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:18px 4px;border-top:1px solid #e7ddcc;font-size:17px;font-weight:500">Email <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;color:#8a8170">chetankesare06@gmail.com ↗</span></a>
+        <a href="https://linkedin.com/in/chetan-kesare09" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:18px 4px;border-top:1px solid #e7ddcc;font-size:17px;font-weight:500">LinkedIn <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;color:#8a8170">chetan-kesare09 ↗</span></a>
+        <a href="https://github.com/0x1Luffy" target="_blank" rel="noopener" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:18px 4px;border-top:1px solid #e7ddcc;border-bottom:1px solid #e7ddcc;font-size:17px;font-weight:500">GitHub <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;color:#8a8170">0x1Luffy ↗</span></a>
+        <a href="tel:+919730728443" style="text-decoration:none;display:flex;align-items:center;justify-content:space-between;padding:18px 4px;font-size:17px;font-weight:500">Phone <span style="font-family:'Spline Sans Mono',monospace;font-size:13px;color:#8a8170">+91 97307 28443 ↗</span></a>
+      </div>
+    </div>
+    <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;color:#a89c86;margin-top:56px">© 2026 Chetan Kesare — DevOps Engineer</p>
+  </section>
+
+</main>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if (navToggle && navLinks) {
+    const closeMenu = () => { navLinks.classList.remove('open'); navToggle.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); };
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  }
+
+  const sections = ['about','experience','projects','ai','certifications','skills','education','contact'];
+  const links = document.querySelectorAll('.nav-link');
+
+  function setActive(id) {
+    links.forEach(link => {
+      const active = link.dataset.section === id;
+      link.style.color = active ? '#2a2620' : '#7a715f';
+      link.style.borderBottomColor = active ? 'var(--accent)' : 'transparent';
+    });
+  }
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) obs.observe(el);
+  });
+
+  (function () {
+    const grid = document.getElementById('pf-contrib');
+    if (!grid) return;
+    const cols = 12, rows = 4, total = cols * rows;
+    for (let i = 0; i < total; i++) {
+      const cell = document.createElement('div');
+      cell.className = 'pf-cell';
+      const lit = Math.random();
+      cell.style.background = lit > 0.55 ? '#6ba354' : (lit > 0.3 ? '#4a7a3a' : '#2f4a28');
+      cell.style.animationDelay = (-Math.random() * 3).toFixed(2) + 's';
+      cell.style.animationDuration = (2.4 + Math.random() * 2.2).toFixed(2) + 's';
+      grid.appendChild(cell);
+    }
+  })();
+</script>
+
+</body>
+</html>

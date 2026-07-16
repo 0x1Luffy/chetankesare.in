@@ -1,0 +1,16 @@
+services:
+  portfolio:
+    image: chetankesare-portfolio:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: chetankesare-portfolio
+    restart: unless-stopped
+    ports:
+      - "6232:6232"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:6232/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s

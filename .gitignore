@@ -1,0 +1,28 @@
+# Docker
+*.log
+.docker/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / build artifacts (if any future tooling is added)
+node_modules/
+dist/
+build/
+coverage/
+
+# Temporary files
+.tmp/
+tmp/
+*.tmp
+
+# Environment files
+.env
+.env.*
