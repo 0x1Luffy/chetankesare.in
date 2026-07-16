@@ -1,6 +1,6 @@
 services:
   portfolio:
-    image: chetankesare-portfolio:latest
+    image: 0x1luffy/portfolio:latest
     build:
       context: .
       dockerfile: Dockerfile

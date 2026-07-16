@@ -5,14 +5,36 @@ This site is a static HTML portfolio and is served by Nginx in a lightweight con
 ## Build and run locally
 
 ```bash
-docker build -t chetankesare-portfolio:latest .
-docker run --rm -p 6232:6232 chetankesare-portfolio:latest
+docker build -t chetankesare/portfolio:latest .
+docker run --rm -p 6232:6232 chetankesare/portfolio:latest
 ```
 
 Or with Docker Compose:
 
 ```bash
 docker compose up -d --build
+```
+
+## Push to Docker Hub
+
+1. Log in to Docker Hub:
+
+```bash
+docker login
+```
+
+2. Tag and push your image:
+
+```bash
+docker tag chetankesare/portfolio:latest chetankesare/portfolio:latest
+docker push chetankesare/portfolio:latest
+```
+
+3. On your VM, pull and run the image from Docker Hub:
+
+```bash
+docker pull chetankesare/portfolio:latest
+docker run -d --name chetankesare-portfolio -p 6232:6232 chetankesare/portfolio:latest
 ```
 
 ## Oracle VM deployment
