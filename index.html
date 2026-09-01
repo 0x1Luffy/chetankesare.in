@@ -111,7 +111,7 @@
       <div style="position:absolute;inset:-14px;border-radius:50%;background-image:repeating-linear-gradient(135deg,#efe5d3 0 12px,#ead9bf 12px 24px);opacity:0.6"></div>
       <div class="pf-avatar-ring"></div>
       <div class="pf-orbit"><span></span></div>
-            <img src="https://res.cloudinary.com/fg25atsu/image/upload/v1784193359/1000021445.jpg_fl1eop.jpg" alt="Raj Dubal" style="position:relative;width:240px;height:240px;border-radius:50%;border:6px solid #f7f1e7;box-shadow:0 8px 30px rgba(42,38,32,0.12);object-fit:cover;display:block">
+            <img src="https://res.cloudinary.com/fg25atsu/image/upload/v1784193359/1000021445.jpg_fl1eop.jpg" alt="Chetan Kesare" style="position:relative;width:240px;height:240px;border-radius:50%;border:6px solid #f7f1e7;box-shadow:0 8px 30px rgba(42,38,32,0.12);object-fit:cover;display:block">
     </div>
   </section>
 
@@ -170,41 +170,67 @@
   <section id="projects" style="padding:72px 0;border-top:1px solid #e7ddcc">
     <div class="pf-sec-head" style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px">
       <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:40px;letter-spacing:-0.02em">Projects</h2>
-      <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170">Case study</p>
+      <p style="font-family:'Spline Sans Mono',monospace;font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:#8a8170">Engineering case study</p>
     </div>
 
     <article class="pf-grid2" style="display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;padding:36px 0;border-top:1px solid #ece3d2">
       <div>
-        <div class="pf-flow" aria-hidden="true">
-          <div style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8170;margin-bottom:16px">push-to-deploy flow</div>
-          <div class="pf-flow-step"><span class="n">1</span>GitHub push → Jenkins webhook</div>
+        <div class="pf-flow" aria-label="ZeroBroker deployment workflow">
+          <div style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#8a8170;margin-bottom:16px">gitops deployment flow</div>
+          <div class="pf-flow-step"><span class="n">1</span>GitHub push → GitHub Actions</div>
           <div class="pf-flow-line"></div>
-          <div class="pf-flow-step"><span class="n">2</span>Diff cluster state (kubectl annotation)</div>
+          <div class="pf-flow-step"><span class="n">2</span>Test &amp; build Docker images</div>
           <div class="pf-flow-line"></div>
-          <div class="pf-flow-step"><span class="n">3</span>Build only changed services (Buildx, arm64)</div>
+          <div class="pf-flow-step"><span class="n">3</span>Push images → Docker Hub</div>
           <div class="pf-flow-line"></div>
-          <div class="pf-flow-step"><span class="n">4</span>Push image → Docker Hub</div>
+          <div class="pf-flow-step"><span class="n">4</span>Update Kubernetes manifests</div>
           <div class="pf-flow-line"></div>
-          <div class="pf-flow-step"><span class="n">5</span>Rollout to K3s, health-checked</div>
+          <div class="pf-flow-step"><span class="n">5</span>Argo CD syncs cluster state</div>
           <div class="pf-flow-line"></div>
-          <div class="pf-flow-step"><span class="n">6</span><span class="tk-ok" style="color:#8fb573">✓</span>&nbsp;Annotate cluster: deploy verified</div>
+          <div class="pf-flow-step"><span class="n">6</span><span class="tk-ok" style="color:#8fb573">✓</span>&nbsp;Prometheus → Alertmanager → Discord</div>
         </div>
+
+        <!-- Put your animated ZeroBroker workflow file beside this HTML file. -->
+        <div style="margin-top:18px;background:#2a2620;border-radius:14px;padding:10px;overflow:hidden;box-shadow:0 18px 40px -18px rgba(42,38,32,0.55)">
+          <img
+            src="zerobroker-workflow.gif"
+            alt="Animated ZeroBroker CI/CD, GitOps, Kubernetes, monitoring and alerting workflow"
+            style="display:block;width:100%;height:auto;border-radius:9px;background:#211e19"
+            loading="lazy"
+          >
+        </div>
+        <p style="font-family:'Spline Sans Mono',monospace;font-size:10px;letter-spacing:0.04em;text-transform:uppercase;color:#8a8170;margin-top:9px">Animated architecture &amp; deployment workflow</p>
       </div>
+
       <div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px">
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Jenkins</span>
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Groovy</span>
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Docker &amp; Buildx</span>
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Kubernetes (K3s)</span>
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Docker Hub</span>
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">GitHub Webhooks</span>
-          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Oracle Cloud (ARM)</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Kubernetes</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">GitHub Actions</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Argo CD</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Docker</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Prometheus</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">Grafana</span>
+          <span style="font-family:'Spline Sans Mono',monospace;font-size:11px;letter-spacing:0.04em;color:#6c6354;border:1px solid #ddd0ba;padding:3px 9px;border-radius:999px">MongoDB Atlas</span>
         </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:27px;letter-spacing:-0.01em;margin-bottom:10px">Automated CI/CD Pipeline for a Multi-Microservice Kubernetes Deployment</h3>
-        <p style="font-size:15px;color:#544d42;margin-bottom:14px">Built an end-to-end Jenkins CI/CD pipeline for a 6-service MERN-stack application (backend, frontend, auth-service, notification-service, stats-service, status-service) running on a self-hosted K3s cluster — turning a previously manual deployment into a fully automated push-to-deploy workflow.</p>
-        <p style="font-size:15px;color:#544d42;margin-bottom:14px"><b>What it does:</b> a push to GitHub triggers Jenkins via webhook, which determines which services actually changed, builds and pushes only those as Docker images (native ARM64 builds via Buildx, hosted on Docker Hub), and rolls them out to the live cluster with health-checked deployments — without rebuilding or restarting unrelated services.</p>
-        <p style="font-size:15px;color:#544d42;margin-bottom:16px"><b>The interesting engineering problem:</b> the hard part wasn't the happy path — it was reliably knowing what needed rebuilding. Diffing git history broke the moment a build failed partway through, since Jenkins' own "last successful build" bookkeeping doesn't distinguish between "actually deployed" and "reported success while silently missing a step." The pipeline was redesigned to read its own deployment state directly off the Kubernetes cluster, via a custom annotation written only after a verified successful rollout, rather than trusting its own history — making the system self-healing against partial failures, closer to how GitOps tools like ArgoCD reason about state. Along the way: Jenkins' Groovy sandbox restrictions, Docker-socket permission boundaries between host and containerized CI runners, and a corrupted-binary/wrong-architecture issue in the build toolchain, each traced to its root cause rather than papered over.</p>
-        <a href="https://github.com/0x1Luffy/DevOps-Culture" target="_blank" rel="noopener" style="display:inline-block;font-size:14px;font-weight:600;color:#fff;background:var(--accent);padding:9px 18px;border-radius:999px;text-decoration:none">View on GitHub ↗</a>
+
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:27px;letter-spacing:-0.01em;margin-bottom:10px">ZeroBroker — GitOps-Driven Real-Estate Microservices Platform</h3>
+
+        <p style="font-size:15px;color:#544d42;margin-bottom:14px">
+          Architected and deployed a containerized real-estate application as a <b>multi-service Kubernetes workload</b>, combining automated CI/CD, GitOps delivery, and production-style observability into a single end-to-end platform.
+        </p>
+
+        <p style="font-size:15px;color:#544d42;margin-bottom:14px">
+          <b>What it demonstrates:</b> React frontend and Node.js/TypeScript services are containerized with Docker and deployed to Kubernetes. A GitHub push triggers <b>GitHub Actions</b> to test and build images, publish them to Docker Hub, and update Kubernetes manifests; <b>Argo CD</b> then detects the desired-state change and synchronizes the cluster automatically.
+        </p>
+
+        <p style="font-size:15px;color:#544d42;margin-bottom:16px">
+          <b>Reliability &amp; observability:</b> <b>Prometheus</b> monitors cluster and application health, while alert rules detect unavailable replicas, crash-looping pods, failing endpoints, and down probes. <b>Alertmanager</b> routes actionable alerts to Discord, and <b>Grafana</b> provides dashboards for application health, resource usage, deployment state, endpoint performance, and alerts — demonstrating a complete <b>build → deploy → observe → alert</b> workflow.
+        </p>
+
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="https://github.com/dcTheFirm/zerobroker" target="_blank" rel="noopener" style="display:inline-block;font-size:14px;font-weight:600;color:#fff;background:var(--accent);padding:9px 18px;border-radius:999px;text-decoration:none">View on GitHub ↗</a>
+          <a href="https://zero-broker.duckdns.org" target="_blank" rel="noopener" style="display:inline-block;font-size:14px;font-weight:600;color:#2a2620;background:#f3e6d5;border:1px solid #e3c9a3;padding:8px 17px;border-radius:999px;text-decoration:none">Live Demo ↗</a>
+        </div>
       </div>
     </article>
   </section>

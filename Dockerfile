@@ -13,6 +13,8 @@ RUN addgroup -S app && adduser -S -G app -h /home/app app \
     && chown -R app:app /var/cache/nginx /var/run /var/log/nginx /tmp/nginx /usr/share/nginx/html
 
 COPY --chown=app:app index.html /usr/share/nginx/html/index.html
+COPY --chown=app:app zerobroker-workflow.gif /usr/share/nginx/html/zerobroker-workflow.gif
+
 COPY --chown=app:app nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --chown=app:app nginx/nginx.conf /etc/nginx/nginx.conf
 
